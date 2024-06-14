@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Записаться {% endblock %}
+
+{% block style %}
+body {
+  background-color: #009688;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+label {
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #fff;
+  color: #009688;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+{% endblock %}
+
+{% block body %}
+<div class="form-container">
+  <form method="POST">
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="surname">Фамилия:</label>
+    <input type="text" id="surname" name="surname" required>
+
+    <label for="phone">Номер телефона:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="activity">Занятие:</label>
+    <select id="activity" name="activity" required>
+      {% for el in lessons %}
+      <option value="{{ el.id }},{{ el.date }}">{{ el.title }} {{ el.date }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Отправить</button>
+  </form>
+</div>
+{% endblock %}

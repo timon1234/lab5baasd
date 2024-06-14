@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %} Главная {% endblock %}
+{% block style %}
+  .carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    transition: filter 0.5s ease-in-out;
+    filter: brightness(60%);
+  }
+
+  .carousel-caption {
+    bottom: 30%;
+    text-align: left;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  .card {
+    width: 320px;
+    height: auto;
+    background-color: #555;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    float: left;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+  }
+
+  .btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+
+  .carousel {
+    height: 100vh;
+  }
+{% endblock %}
+
+
+{% block body %}
+
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://fonoteka.top/uploads/posts/2022-09/1663697218_1-phonoteka-org-p-fon-kachalka-vkontakte-1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="card text-white bg-dark">
+          <div class="card-body">
+            <h5 class="card-title">First slide label</h5>
+            <p class="card-text">Some representative placeholder content for the first slide.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://spravka.ru/uploads/0/0/Wa/GWl0bbd2EDG1gWsn65ZI-_suLkq2zp/original_58e5e5887bbfb3af438b456f_5a6b521183d08.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="card text-white bg-dark">
+          <div class="card-body">
+            <h5 class="card-title">Second slide label</h5>
+            <p class="card-text">Some representative placeholder content for the second slide.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://sportishka.com/uploads/posts/2022-11/1667565982_58-sportishka-com-p-planirovka-trenazhernogo-zala-pinterest-60.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="card text-white bg-dark">
+          <div class="card-body">
+            <h5 class="card-title">Third slide label</h5>
+            <p class="card-text">Some representative placeholder content for the third slide.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% endblock %}

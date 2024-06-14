@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %} О клубе {% endblock %}
+
+{% block style %}
+.container_about {
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+.card-section {
+    background-color: #009688;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    margin-right: 8px;
+    color: #fff;
+}
+
+.personal-container, .branch-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.personal-card, .branch-card {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.personal-card:hover, .branch-card:hover {
+    transform: scale(1.05);
+}
+
+.personal-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.branch-card h5 {
+    font-size: 1.2rem;
+    color: #009688;
+}
+
+.branch-card p {
+    margin: 5px 0;
+}
+{% endblock %}
+
+{% block body %}
+<div class="container_about">
+    <div class="card-section">
+        <h3>Преимущества клуба</h3>
+        <ul>
+            <li>Персональные тренировки с опытными тренерами</li>
+            <li>Широкий выбор групповых занятий</li>
+            <li>Современное оборудование и уютные залы</li>
+            <li>Комфортные условия для тренировок</li>
+        </ul>
+    </div>
+    <div class="card-section">
+        <h3>Оборудование и залы</h3>
+        <p>Наш клуб оснащен современным оборудованием, предназначенным для различных видов тренировок. У нас есть уютные и просторные залы, созданные для комфортного занятия спортом.</p>
+    </div>
+    <div class="card-section">
+        <h3>Команда</h3>
+        <div class="personal-container">
+            {% for trainer in trainers %}
+            <div class="personal-card">
+                <img src="{{ trainer.photo }}" alt="Фото сотрудника" class="personal-img">
+                <h5>{{ trainer.full_name }}</h5>
+                <p>{{ trainer.position }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="card-section">
+        <h3>Наши филиалы</h3>
+        <div class="branch-container">
+            {% for branch in branches %}
+            <div class="branch-card">
+                <h5>{{ branch.address }}</h5>
+                <p>Телефон: {{ branch.phone_number }}</p>
+                <p>Часы работы: {{ branch.working_hours }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

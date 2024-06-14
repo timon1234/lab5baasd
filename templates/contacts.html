@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block style %}
+    .contact-info-container {
+        margin-top: 50px;
+    }
+    .contact-info-item {
+        margin-bottom: 20px;
+    }
+    h2, h3 {
+        color: #009688;
+        text-align: center;
+    }
+    .contact-info-item p {
+        text-align: center;
+    }
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Наши контакты</h2>
+    <div class="row contact-info-container justify-content-center">
+        <div class="col-md-6">
+            <div class="contact-info-item">
+                <h3>Телефон</h3>
+                <p>+7 (XXX) XXX-XX-XX</p>
+            </div>
+            <div class="contact-info-item">
+                <h3>Электронная почта администрации</h3>
+                <p>фффф@gogle.com</p>
+            </div>
+            <div class="contact-info-item">
+                <h3>Электронная почта для коммерческих предложений</h3>
+                <p>s12412451435@e13451345.com</p>
+            </div>
+            <div class="contact-info-item">
+                <h3>Адрес фитнес-центра</h3>
+                <p>ул. N, д. 124124</p>
+            </div>
+            <div class="contact-info-item">
+                <h3>Режим работы</h3>
+                <p>Пн-Пт: 7:00-22:00<br>Сб-Вс: 10:00-20:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
